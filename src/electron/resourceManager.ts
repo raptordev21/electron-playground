@@ -48,7 +48,7 @@ function getStorageData() {
   const free = stats.bsize * stats.bfree;
 
   return {
-    total: Math.floor(total / 1_000_000_000),
+    total: Math.floor(total / 1_000_000_000), // convert to GB
     usage: 1 - free / total,
   };
 }
