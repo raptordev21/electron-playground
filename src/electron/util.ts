@@ -34,7 +34,10 @@ export function ipcWebContentsSend<Key extends keyof EventPayloadMapping>(
   webContents.send(key, payload);
 }
 
-export function validateEventFrame(frame: WebFrameMain) {
+export function validateEventFrame(frame: WebFrameMain | null) {
+  if (!frame) {
+    throw new Error("No frame associated with event");
+  }
   if (isDev() && new URL(frame.url).host === "localhost:5123") {
     return;
   }

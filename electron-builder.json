@@ -1,6 +1,7 @@
 {
   "appId": "com.raptordev21.electron-playground",
   "files": ["dist-electron", "dist-react"],
+  "extraResources": ["dist-electron/preload.cjs", "src/assets/**"],
   "icon": "./desktopIcon.png",
   "mac": {
     "target": "dmg"
